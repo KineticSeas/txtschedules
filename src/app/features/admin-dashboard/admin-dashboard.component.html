@@ -1,0 +1,124 @@
+<div class="container-fluid main-container" style="margin-left: -20px;">
+    <div class="row">
+        <div class="col-12">
+    <div class="d-none d-sm-none d-lg-none d-xl-block col-12">
+        <app-page-header></app-page-header>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xl-3 col-xxl-2">
+            <app-sitebar-wrapper></app-sitebar-wrapper>       
+        </div>
+        <div class="col-lg-8 col-xl-9 col-xxl-10">
+            <div class="content-wrappe">
+                <div class="row">
+                    <div class="col-12">
+                          <div class="card">
+                              <div class="card-header" style="padding-top: 8px; padding-bottom: 8px;">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h1 style="margin-bottom: 0px;">Welcome to Kinetic Voice</h1>
+                                            <p>Seperate processing section using the pipe | symbol.  The optimal section size is 5-10 words.</p>
+                                        </div>
+                                    </div>
+                              </div>
+                            <div class="card-body">
+                                <div  *ngIf="adding=='N'"  class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <div class="mb-3">
+                                                    <label for="exampleFormControlInput1" class="form-label" style="color:black">Project Name (No Spaces - Unique)</label>
+                                                    <input type="text" [(ngModel)]="data.formData['script_name']" class="form-control" id="exampleFormControlInput1">
+                                                  </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <button *ngIf="istopopen=='N'" class="btn btn-primary m-4" (click)="toggleTopOpen()">Show Script</button>
+                                                <button *ngIf="istopopen=='Y'" class="btn btn-secondary m-4" (click)="toggleTopOpen()">Hide Script</button>
+                                                <button class="btn btn-dark m-4" (click)="lreload();">Reload</button>
+                                            </div>
+
+                                        </div>
+                                        <div *ngIf="istopopen=='Y'||data.formData['script']==''" class="row">
+                                            <div class="col-12">
+                                                    <h2>Enter Script</h2>
+                                                    <div class="col-12">
+                                                        <textarea [(ngModel)]="data.formData['script']" style="width:100%; height: 180px;"></textarea>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <p>&nbsp; </p>
+                                                        <button (click)="postForm()" class="btn btn-primary" style="width:100%;">Save Script</button>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header" style="padding-top: 8px; padding-bottom: 8px;">
+                                  <div class="row">
+                                    <h3 style="margin-bottom: 0px;">Script Segments</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-compressed table-condensed table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Seq
+                                                    </th>
+                                                    <th>
+                                                        Script
+                                                    </th>
+                                                    <th>
+                                                        Filename
+                                                    </th>
+                                                    <th>
+
+                                                    </th>
+                                                    <th>
+
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let m of data?.list">
+                                                    <td>{{ m.seq }}</td>
+                                                    <td *ngIf="m.open=='N'">
+                                                            {{ m.line }}
+                                                    </td>
+                                                    <td *ngIf="m.open=='Y'">
+                                                        <input class="form-control" type="text" [(ngModel)]="m.line">
+                                                    </td>
+                                                    <td><audio *ngIf="m['filename']!=''" controls>
+                                                        <source src="https://voice.kineticseas.com/output/{{ data.formData['script_name']  }}-{{ m.id }}.wav" type="audio/wav">
+                                                        Your browser does not support the audio element.
+                                                    </audio>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button *ngIf="m.open=='N'" class="btn btn-success m-1" (click)="toggleOpen(m);">Edit</button>
+                                                        <button *ngIf="m.open=='Y'" class="btn btn-danger m-1" (click)="saveOne(m);">Save</button>
+                                                        <button *ngIf="m.open=='Y'" class="btn btn-dark m-1" (click)="toggleOpen(m);">Close</button>
+                                                        <button *ngIf="m.open=='N'" class="btn btn-primary m-1" (click)="runOne(m);">Send</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span style="font-size:8px">/app/features/admin-dashboard</span>

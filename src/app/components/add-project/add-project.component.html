@@ -1,0 +1,49 @@
+<div class="card">
+<div class="card-header">
+    Add Project
+</div>
+<div class="card-body">
+    <div class="row">
+        <div class="col-6">
+
+                <div class="mb-3">
+                  <label for="project_name"  class="form-label">Project Name</label>
+                  <input type="text" [(ngModel)]="data?.formData['project_name']" class="form-control" id="project_name" aria-describedby="project_name">
+                </div>
+                <div class="mb-3">
+                    <label for="project_type" class="form-label">Project Type</label>
+                    <select  [(ngModel)]="data?.formData['project_type']"  class="form-select" aria-label="Default select example">
+                        <option selected>-- Select --</option>
+                        <option value="Model Training">Model Training</option>
+                        <option value="Fine-Tuning">Model Fine-Tuning</option>
+                        <option value="Inference Testing">Inference Testing</option>
+                        <option value="Inference">Production Inference</option>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <label for="project_type" class="form-label">Storage Limit (GB)</label>
+                    <select [(ngModel)]="data?.formData['storage_limit']" class="form-select" aria-label="Default select example">
+                        <option selected>-- Select --</option>
+                        <option value="32">32GB</option>
+                        <option value="64">64GB</option>
+                        <option value="128">128GB</option>
+                        <option value="256">256GB</option>
+                        <option value="0">No Limit</option>
+                      </select>
+                </div>
+
+        </div>
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Project Description</label>
+                <textarea [(ngModel)]="data?.formData['project_dsc']" class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+              </div>
+              <div class="mb-3"  style="text-align: right;">
+                <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+              </div>
+        </div>
+        </div>
+</div>
+</div>
+<span style="font-size:8px">/app/components/add-project</span>

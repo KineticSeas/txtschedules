@@ -1,0 +1,90 @@
+<div class="container-fluid main-container" style="margin-left: -20px;">
+    <div class="row">
+        <div class="col-12">
+    <div class="d-none d-sm-none d-lg-none d-xl-block col-12">
+        <app-page-header></app-page-header>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xl-3 col-xxl-2">
+            <app-sitebar-wrapper></app-sitebar-wrapper>       
+        </div>
+        <div class="col-lg-8 col-xl-9 col-xxl-10">
+            <div class="content-wrappe">
+                <div class="row">
+                    <div class="col-12">
+                          <div class="card">
+                              <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h1>{{ data.formData['project_name'] }}</h1>
+                                            <p>{{ data.formData['project_dsc'] }}</p>
+                                        </div>
+                                    </div>
+                              </div>
+                            <div class="card-body">
+                                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item active" aria-current="true">{{ data?.formData['name'] }}</li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Hostname:</div><div class="col-6">{{ data?.formData['host_name'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">URL:</div><div class="col-6">{{ data?.formData['url'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Host URL:</div><div class="col-6">{{ data?.formData['host_url'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">VM ID:</div><div class="col-6">{{ data?.formData['vm_id'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">IP:</div><div class="col-6">{{ data?.formData['ip'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Uptime:</div><div class="col-6">{{ data?.formData['uptime'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Mem:</div><div class="col-6">{{ data?.formData['mem'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Sockets:</div><div class="col-6">{{ data?.formData['socket_count'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">CPU:</div><div class="col-6">{{ data?.formData['cpu'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Cores:</div><div class="col-6">{{ data?.formData['core_count'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">GPU:</div><div class="col-6">{{ data?.formData['gpu_count'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Max Disk:</div><div class="col-6">{{ data?.formData['maxdisk'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Max Mem:</div><div class="col-6">{{ data?.formData['maxmem'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Net In:</div><div class="col-6">{{ data?.formData['netin'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Net Out:</div><div class="col-6">{{ data?.formData['netout'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Disk:</div><div class="col-6">{{ data?.formData['disk'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Disk Read:</div><div class="col-6">{{ data?.formData['diskread'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Max Disk:</div><div class="col-6">{{ data?.formData['diskwrite'] }}</div></div></li>
+                                    <li class="list-group-item" style="padding-top: 5px; padding-bottom: 5px"><div class="row"><div class="col-6">Status:</div><div class="col-6">{{ data?.formData['status'] }}</div></div></li>
+                                  </ul>
+                            </div>
+                            <div class="col-8">
+                                <div class="card">
+                                    <div style="padding-top: 8px; padding-bottom: 0px" class="card-header">
+                                        <div *ngIf="data.formData['status']=='running'" class="row" style="width:100%">
+                                            <div class="col-6"><h2>Uptime: {{ data.formData['uptime'] }} seconds</h2></div>
+                                            <div class="col-6" style="text-align: right; font-size:32px;"><button (click)="shutdownVM()" class="btn btn-danger">Shutdown</button></div>
+                                        </div>
+                                    </div>
+                                    <div style="padding-top: 8px; padding-bottom: 0px" class="card-header">
+                                        <div *ngIf="data.formData['status']!='running'" class="row" style="width:100%">
+                                            <div class="col-6"></div>
+                                            <div class="col-6" style="text-align: right; font-size:32px;"><button (click)="startVM()" class="btn btn-success">Start</button></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div *ngIf="ups=='Y'" class="col-12">
+                                                <div class="card">
+                                                    <app-smart-upload (cancel)="toggleUpload()"></app-smart-upload>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <app-push-to-host *ngIf="data.formData['status']=='running'"></app-push-to-host>
+                                <app-push-to-host-disabled *ngIf="data.formData['status']!='running'"></app-push-to-host-disabled>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span style="font-size:8px">/app/pages/model-dashboard</span>

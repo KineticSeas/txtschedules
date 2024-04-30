@@ -1,0 +1,78 @@
+<div class="card">
+    <div class="card-header">
+        Add Product
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+    
+                    <div class="mb-3">
+                      <label for="proje"  class="form-label">Product </label>
+                      <input type="text" [(ngModel)]="data?.formData['product_id']" class="form-control" id="product_id" aria-describedby="project_name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="proje"  class="form-label">Product Name</label>
+                        <input type="text" [(ngModel)]="data?.formData['product_name']" class="form-control" id="product_name" aria-describedby="project_name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="proje"  class="form-label">GPU Description</label>
+                        <input type="text" [(ngModel)]="data?.formData['gpu_dsc']" class="form-control" id="gpu_dsc" aria-describedby="gpu_dsc">
+                      </div>
+                      <div class="mb-3">
+                        <label for="proje"  class="form-label">Cores Description</label>
+                        <input type="text" [(ngModel)]="data?.formData['cores_dsc']" class="form-control" id="cores_dsc" aria-describedby="gpu_dsc">
+                      </div>
+                      <div class="mb-3">
+                        <label for="proje"  class="form-label">Memory Description</label>
+                        <input type="text" [(ngModel)]="data?.formData['memory_dsc']" class="form-control" id="memory_dsc" aria-describedby="gpu_dsc">
+                      </div>
+                      <div class="mb-3">
+                        <label for="proje"  class="form-label">Storage Description</label>
+                        <input type="text" [(ngModel)]="data?.formData['storage_dsc']" class="form-control" id="storage_dsc" aria-describedby="gpu_dsc">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="proje"  class="form-label">Template Name</label>
+                            <input type="text" [(ngModel)]="data?.formData['template_name']" class="form-control" id="template_name" aria-describedby="gpu_dsc">
+                          </div>
+                          <div class="mb-3">
+                            <label for="proje"  class="form-label">Template Host Name</label>
+                            <input type="text" [(ngModel)]="data?.formData['template_host_name']" class="form-control" id="template_host_name" aria-describedby="gpu_dsc">
+                          </div>
+                          <div class="mb-3">
+                            <label for="proje"  class="form-label">Template Host ID</label>
+                            <input type="text" [(ngModel)]="data?.formData['template_host_id']" class="form-control" id="template_host_id" aria-describedby="gpu_dsc">
+                          </div>
+
+                        <div class="mb-3">
+                            <label for="proje"  class="form-label">Price Per Hour</label>
+                            <input type="text" [(ngModel)]="data?.formData['price_per_hour']" class="form-control" id="price_per_hour" aria-describedby="gpu_dsc">
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="proje"  class="form-label">Price Per Month</label>
+                            <input type="text" [(ngModel)]="data?.formData['price_per_month']" class="form-control" id="price_per_month" aria-describedby="gpu_dsc">
+                          </div>
+
+                    <div class="mb-3">
+                        <label for="project_type" class="form-label">Pertsistant</label>
+                        <select  [(ngModel)]="data?.formData['persistant']"  class="form-select" aria-label="Default select example">
+                            <option selected>-- Select --</option>
+                            <option value="Y">Yes</option>
+                            <option value="N">No</option>
+                          </select>
+                    </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Product Description</label>
+                    <textarea [(ngModel)]="data?.formData['project_dsc']" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                  </div>
+                  <div class="mb-3"  style="text-align: right;">
+                    <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                    <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                  </div>
+            </div>
+            </div>
+    </div>
+    </div>
+    <span style="font-size:8px">/app/components/add-project</span>

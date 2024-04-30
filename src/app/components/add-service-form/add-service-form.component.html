@@ -1,0 +1,49 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+              <div class="row mb-3">
+                <div class="col-12">
+                  <p>Adding a persistant Development/Training Instance gives you a dedicated instance you can customize with your own software and libraries. You 
+                    can add and remove GPU resources for training or testing at any time.  The presistant instance is billed monthly and you are only charged for GPUs when you 
+                    use them.  Additional RAM and Cores are added automatically for the quantity and type of GPUs you select.
+                  </p>
+                </div>
+              </div>              
+                   <div class="mb-3">
+                      <label for="project_name"  class="form-label">VM Name (No Spaces or Special Chars)</label>
+                      <input type="text" [(ngModel)]="data?.formData['vm_name']" class="form-control" id="vm_name" aria-describedby="vm_name">
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label for="project_type" class="form-label">VM Type</label>
+                        <select  [(ngModel)]="data?.formData['vm_type']"  class="form-select" aria-label="Default select example">
+                            <option selected>-- Select --</option>
+                            <option value="standard">Persistent Standard</option>
+                          </select>
+                    </div> -->
+                    <div class="mb-3">
+                        <label for="password"  class="form-label">Password</label>
+                        <input type="text" [(ngModel)]="data?.formData['password']" class="form-control" id="password" aria-describedby="password">
+                      </div>
+                      <div class="mb-3">
+                        <label for="repeat_password"  class="form-label">Repeat Password</label>
+                        <input type="text" [(ngModel)]="data?.formData['repeat_password']" class="form-control" id="repeat_password" aria-describedby="repeat_password">
+                     </div>
+                     <div class="row mb-3">
+                      <div class="col-12">
+                        <p>By submitting this form you agree to the Kinetic Cloud User agreement.  Crypto mining is expressly prohibited.
+                        </p>
+                      </div>
+                    </div>  
+                     <div class="mb-3"  style="text-align: right;">
+                        <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                        <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                      </div>
+            </div>
+            <div class="col-6">
+
+            </div>
+            </div>
+    </div>
+    </div>
+    <span style="font-size:8px">/app/components/add-service-form</span>

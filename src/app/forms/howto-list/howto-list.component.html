@@ -1,0 +1,109 @@
+<div class="container-fluid main-container" style="margin-left: -20px;">
+    <div class="row">
+        <div class="col-12">
+    <div class="d-none d-sm-none d-lg-none d-xl-block col-12">
+        <app-page-header></app-page-header>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xl-3 col-xxl-2">
+            <app-sitebar-wrapper></app-sitebar-wrapper>       
+        </div>
+        <div class="col-lg-8 col-xl-9 col-xxl-10">
+            <div class="content-wrappe">
+                <div class="row">
+                    <div class="col-12">
+                          <div class="card">
+                              <div class="card-header">
+                                    <div class="row" style="width:100%">
+                                        <div class="col-6">
+                                            <h1>HowTo Pages</h1>
+                                        </div>
+                                        <div class="col-6" style="text-align:right">
+                                            <button (click)="toggleAdding()"    class="btn btn-primary">Add How-To</button>
+                                        </div>
+                                    </div>
+                              </div>
+                            <div class="card-body">
+                                <div *ngIf="adding=='Y'" class="row">
+                                    <div class="col-12">
+                                        <app-add-howto-form (close)="toggleAdding()"></app-add-howto-form>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-2">
+                                        Search: 
+                                    </div>
+                                    <div class="col-xl-2">
+                                        <input type="text" [(ngModel)]="term" class="form-control">
+                                    </div>
+                                    <div class="col-xl-2">
+                                        (click row to view)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card"  *ngFor="let m of data?.list | filter: term | paginate: { currentPage: p, itemsPerPage: 100 }">
+                                            <div class="card-header">
+                                                <div class="row" style="width:100%">
+                                                    <div class="col-lg-1">
+                                                        ({{ m.id }}) - 
+                                                        {{ m.section }}
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        {{ m.title }}
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        {{ m.url }}
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        {{ m.image }}
+                                                    </div>
+                                                    <div class="col-lg-1">
+                                                        {{ m.page_order }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        {{ m.topic }}
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        {{ m.background }}
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-lg-10">
+                                                        Related to: {{ m.related }}
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <a href="https://guides.kineticseas.com/{{ m.url }}.php">
+                                                        <button [routerLink]="['/edit-howto', m.id]" class="btn btn-primary m-1">
+                                                            Test
+                                                        </button></a>
+                                                        <button [routerLink]="['/edit-howto', m.id]" class="btn btn-secondary m-1">
+                                                            Edit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top:30px;">
+                                            <div class="col-12">
+                                                <paging-controls (pageChange)="p = $event" [isItemsPerPage]="false"  
+                                                class="my-pagination"></paging-controls>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<span style="font-size:8px">/app/pages/product-list</span>

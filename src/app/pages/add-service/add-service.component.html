@@ -1,0 +1,245 @@
+<div class="container-fluid main-container" style="margin-left: -20px;">
+    <div class="row">
+        <div class="col-12">
+    <div class="d-none d-sm-none d-lg-none d-xl-block col-12">
+        <app-page-header></app-page-header>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xl-3 col-xxl-2">
+            <app-sitebar-wrapper></app-sitebar-wrapper>       
+        </div>
+        <div class="col-lg-8 col-xl-9 col-xxl-10">
+            <div class="content-wrappe">
+                <div class="row">
+                    <div class="col-12">
+                          <div class="card">
+                            <div class="card-header" style="padding-top: 8px; padding-bottom: 8px;">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h1 style="margin-bottom: 0px;">Add Service</h1>
+                                    </div>
+                                </div>
+                          </div>
+                            <div class="card-body">
+                                <p>Select a persistant instance type.</p>
+                                <div *ngIf="paying=='Y'" class="row">
+                                    <div class="col-12">
+                                        <app-payment-form></app-payment-form>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="card m-2">
+                                                    <div class="card-header">
+                                                        Persistant Development/Training Instances
+                                                    </div>
+                                                    <div class="card-body">
+                                                      <!-- <div class="row">
+                                                            <div class="col-12">
+                                                                <p style="font-size:11px;">Persistant instances are available with or without GPU resources whenever you need them.  The base price includes 
+                                                                    CPU, RAM, and Disk Storage that is accessable whenever you want.  Each instance can be upgraded and launched 
+                                                                with all available GPU resources on an hourly basis.</p>
+                                                            </div>
+                                                        </div> -->
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="card card-body">
+                                                                    <h3>Starter Instance</h3>
+                                                                    <p>2 CPU, 4GB RAM, and 128GB of Server storage + 128GB TruSafe Storage available with one user account.</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <h1>$49/month</h1>
+                                                                        </div>
+                                                                        <div class="col-6" style="text-align: right;">
+                                                                            <button (click)="toggleAdding()" class="btn btn-primary">Select</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div *ngIf="adding=='Y'" class="row">
+                                                                        <div class="col-12">
+                                                                            <app-add-service-form></app-add-service-form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="card card-body">
+                                                                    <h3>Basic Instance</h3>
+                                                                    <p>2 CPU, 4GB RAM, and 256GB of Server storage + 256GB TruSafe Storage available with one user account.</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <h1>$99/month</h1>
+                                                                        </div>
+                                                                        <div class="col-6" style="text-align: right;">
+                                                                            <button class="btn btn-primary">Select</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="card card-body">
+                                                                    <h3>Pro Instance</h3>
+                                                                    <p>4 CPU, 8GB RAM, and 512GB of Server storage + 512GB TruSafe Storage available with one user account.</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <h1>$149/month</h1>
+                                                                        </div>
+                                                                        <div class="col-6" style="text-align: right;">
+                                                                            <button class="btn btn-primary">Select</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="card card-body">
+                                                                    <h3>Advances Instance</h3>
+                                                                    <p>4 CPU, 8GB RAM, and 1T of Server storage + 1T TruSafe Storage available with one user account.</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <h1>$199/month</h1>
+                                                                        </div>
+                                                                        <div class="col-6" style="text-align: right;">
+                                                                            <button class="btn btn-primary">Select</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="card card-body">
+                                                                    <h3>Additional TruSafe Accounts</h3>
+                                                                    <p>Each additional TruSafe Account allows an additional user to prepare datasets and models using TruSafe</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <h1>$20/month</h1>
+                                                                        </div>
+                                                                        <div class="col-6" style="text-align: right;">
+                                                                            <button class="btn btn-primary">Select</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           <!-- <div class="col-4">
+                                                <div class="card m-2">
+                                                    <div class="card-header">
+                                                        Hourly GPU Rentals (Development Training)
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="card card-body">
+                                                                    <h3>NVIDIA V100 x 1</h3>
+                                                                    <p>16GB GPU RAM, 32GB CPU Ram, 8 Cores, 256GB of Temporary Server storage.</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <h1>$1.95/hour</h1>
+                                                                        </div>
+                                                                        <div class="col-6" style="text-align: right;">
+                                                                            <button class="btn btn-primary">Select</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="card card-body">
+                                                                    <h3>NVIDIA V100 x 2</h3>
+                                                                    <p>16GB GPU RAM (32GB Total), 64GB CPU Ram, 16 Cores, 256GB of Temporary Server storage.</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <h1>$3.75/hour</h1>
+                                                                        </div>
+                                                                        <div class="col-6" style="text-align: right;">
+                                                                            <button class="btn btn-primary">Select</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="card card-body">
+                                                                    <h3>NVIDIA V100 x 3</h3>
+                                                                    <p>16GB GPU RAM (64GB Total), 128GB CPU Ram, 18 Cores, 256GB of Temporary Server storage.</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <h1>$7.25/hour</h1>
+                                                                        </div>
+                                                                        <div class="col-6" style="text-align: right;">
+                                                                            <button class="btn btn-primary">Select</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="card card-body">
+                                                                    <h3>NVIDIA V100 x 8</h3>
+                                                                    <p>16GB GPU RAM (128GB Total), 256GB CPU Ram, 32 Cores, 256GB of Temporary Server storage.</p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <h1>$14/hour</h1>
+                                                                        </div>
+                                                                        <div class="col-6" style="text-align: right;">
+                                                                            <button class="btn btn-primary">Select</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div> -->
+                                        <div class="col-6">
+                                            <div class="card m-2">
+                                                <div class="card-header">
+                                                    Production Inference Instances
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="card card-body">
+                                                                <h3>Single GPU Instance</h3>
+                                                                <p>8 vCPU, 16GB RAM, and 128GB of Server storage - 1 NVIDIA V100 with 16GB RAM</p>
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <h1>$599/month</h1>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align: right;">
+                                                                        <button (click)="toggleAdding()" class="btn btn-primary">Select</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="card card-body">
+                                                                <h3>2x GPU Instance</h3>
+                                                                <p>16 vCPU, 64GB RAM, and 128GB of Server storage - 2 NVIDIA V100 with 16GB RAM Each</p>
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <h1>$999/month</h1>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align: right;">
+                                                                        <button class="btn btn-primary">Select</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>      
+                </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span style="font-size:8px">/app/pages/add-service</span>

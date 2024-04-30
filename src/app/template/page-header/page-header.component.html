@@ -1,0 +1,33 @@
+<div class="page-header">
+    <div class="toggle-sidebar" id="toggle-sidebar"><i class="bi bi-list"></i></div>
+    <ol class="breadcrumb">
+<!--      <li class="breadcrumb-item"><i class="bi bi-house"></i><a [routerLink]="['']">Home</a></li> -->
+  <!--    <li [routerLink]="data.location" class="breadcrumb-item breadcrumb-active" aria-current="page">{{ data.location }}</li> -->
+    </ol>
+    <div class="header-actions-container">
+      <div class="search-container">
+<!--        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search anything">
+          <button class="btn" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div> -->
+      </div>
+      <ul class="header-actions">
+        <li class="dropdown d-none d-md-block">
+          <a href="#" id="countries" data-toggle="dropdown" aria-haspopup="true">
+            <img src="assets/img/flags/1x1/us.svg" class="flag-img" alt="">
+          </a>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+            <span class="user-name d-none d-md-block">{{ data.full_name }}</span>
+            <span class="avatar">
+              <img src="assets/img/user.png" alt="User Avatar">
+              <span class="status online"></span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>

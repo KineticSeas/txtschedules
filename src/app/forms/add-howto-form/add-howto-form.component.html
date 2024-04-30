@@ -1,0 +1,676 @@
+
+<div class="card">
+    <div class="card-header">
+        Add Howto Page
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+    
+                    <div class="mb-3">
+                      <label for="url"  class="form-label">URL</label>
+                      <input type="text" [(ngModel)]="data?.formData['url']" class="form-control" id="url" aria-describedby="url">
+                    </div>
+                    <div class="mb-3">
+                        <label for="title"  class="form-label">Title (Question)</label>
+                        <input type="text" [(ngModel)]="data?.formData['title']" class="form-control" id="title" aria-describedby="title">
+                      </div>
+                    <div class="mb-3">
+                        <label for="project_type" class="form-label">Section</label>
+                        <select  [(ngModel)]="data?.formData['section']"  class="form-select" aria-label="Default select example">
+                            <option selected>-- Select --</option>
+                            <option value="ProxMox">ProxMox</option>
+                            <option value="Python">Python</option>
+                            <option value="FastAPI">FastAPI</option>
+                            <option value="Angular">Angular</option>
+                            <option value="Oracle">Oracle</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Ubuntu">Ubuntu</option>
+                          </select>
+                    </div>  
+                    <div class="mb-3">
+                        <label for="project_type" class="form-label">Page Order</label>
+                        <select  [(ngModel)]="data?.formData['page_order']"  class="form-select" aria-label="Default select example">
+                            <option selected>-- Select --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                          </select>
+                    </div>  
+                    <div class="mb-3">
+                        <label for="title"  class="form-label">Related Topics (ids comma seperated)</label>
+                        <input type="text" [(ngModel)]="data?.formData['related']" class="form-control" id="title" aria-describedby="title">
+                      </div>  
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Background</label>
+                        <textarea [(ngModel)]="data?.formData['background']" class="form-control" id="topic" rows="8"></textarea>
+                    </div>      
+                    <div class="mb-3">
+                        <label for="image"  class="form-label">Image</label>
+                        <input type="text" [(ngModel)]="data?.formData['image']" class="form-control" id="image" aria-describedby="image">
+                      </div>            
+            </div>
+            <div class="col-6">
+                <div class="mb-3"  style="text-align: right;">
+                    <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                    <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                    <a href="https://guides.kineticseas.com/{{ data.formData['url'] }}"><button (click)="postForm()" class="btn btn-success m-2">Test</button></a>
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Topic</label>
+                    <textarea [(ngModel)]="data?.formData['topic']" class="form-control" id="topic" rows="8"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Screencast</label>
+                    <textarea [(ngModel)]="data?.formData['screencast']" class="form-control" id="screencast" rows="8"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">YouTube</label>
+                    <textarea [(ngModel)]="data?.formData['youtube']" class="form-control" id="youtube" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Included Topics</label>
+                    <textarea [(ngModel)]="data?.formData['included']" class="form-control" id="included" rows="8"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Transcript</label>
+                    <textarea [(ngModel)]="data?.formData['transcript']" class="form-control" id="transcript" rows="8"></textarea>
+                </div>
+                  <div class="mb-3"  style="text-align: right;">
+                    <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                    <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                  </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Step 1</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Type</label>
+                                        <select  [(ngModel)]="data?.formData['step_type1']"  class="form-select" aria-label="Default select example">
+                                            <option selected>-- Select --</option>
+                                            <option value="C">Code</option>
+                                            <option value="I">Image</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['step_title1']" class="form-control" id="step_title1" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                        <textarea [(ngModel)]="data?.formData['step_dsc1']" class="form-control" id="step_dsc1" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="data?.formData['step_type1']=='I'"  class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Notes</label>
+                                        <textarea [(ngModel)]="data?.formData['step_notes1']" class="form-control" id="step_notes1" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Left Code Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['left_title1']" class="form-control" id="left_title1" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Code</label>
+                                        <textarea [(ngModel)]="data?.formData['step_code1']" class="form-control" id="step_code1" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3"  style="text-align: right;">
+                                <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                                <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="data.formData['step_title1']!=''" class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Step 2</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Type</label>
+                                        <select  [(ngModel)]="data?.formData['step_type2']"  class="form-select" aria-label="Default select example">
+                                            <option selected>-- Select --</option>
+                                            <option value="C">Code</option>
+                                            <option value="I">Image</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['step_title2']" class="form-control" id="step_title2" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                        <textarea [(ngModel)]="data?.formData['step_dsc2']" class="form-control" id="step_dsc2" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div *ngIf="data?.formData['step_type2']=='I'"  class="row">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Notes</label>
+                                        <textarea [(ngModel)]="data?.formData['step_notes2']" class="form-control" id="step_notes2" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Left Code Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['left_title2']" class="form-control" id="left_title2" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Code</label>
+                                        <textarea [(ngModel)]="data?.formData['step_code2']" class="form-control" id="step_code2" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3"  style="text-align: right;">
+                                <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                                <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="data.formData['step_title2']!=''" class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Step 3</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Type</label>
+                                        <select  [(ngModel)]="data?.formData['step_type3']"  class="form-select" aria-label="Default select example">
+                                            <option selected>-- Select --</option>
+                                            <option value="C">Code</option>
+                                            <option value="I">Image</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['step_title3']" class="form-control" id="step_title3" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                        <textarea [(ngModel)]="data?.formData['step_dsc3']" class="form-control" id="step_dsc3" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="data?.formData['step_type3']=='I'"  class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">After Image</label>
+                                        <textarea [(ngModel)]="data?.formData['step_notes3']" class="form-control" id="step_notes3" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Left Code Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['left_title3']" class="form-control" id="left_title3" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Code</label>
+                                        <textarea [(ngModel)]="data?.formData['step_code3']" class="form-control" id="step_code3" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3"  style="text-align: right;">
+                                <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                                <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="data.formData['step_title3']!=''" class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Step 4</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Type</label>
+                                        <select  [(ngModel)]="data?.formData['step_type4']"  class="form-select" aria-label="Default select example">
+                                            <option selected>-- Select --</option>
+                                            <option value="C">Code</option>
+                                            <option value="I">Image</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['step_title4']" class="form-control" id="step_title4" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                        <textarea [(ngModel)]="data?.formData['step_dsc4']" class="form-control" id="step_dsc4" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="data?.formData['step_type3']=='I'"  class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Notes</label>
+                                        <textarea [(ngModel)]="data?.formData['step_notes4']" class="form-control" id="step_notes4" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Left Code Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['left_title4']" class="form-control" id="left_title4" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Code</label>
+                                        <textarea [(ngModel)]="data?.formData['step_code4']" class="form-control" id="step_code4" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3"  style="text-align: right;">
+                                <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                                <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="data.formData['step_title4']!=''" class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Step 5</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Type</label>
+                                        <select  [(ngModel)]="data?.formData['step_type5']"  class="form-select" aria-label="Default select example">
+                                            <option selected>-- Select --</option>
+                                            <option value="C">Code</option>
+                                            <option value="I">Image</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['step_title5']" class="form-control" id="step_title5" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                        <textarea [(ngModel)]="data?.formData['step_dsc5']" class="form-control" id="step_dsc5" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="data?.formData['step_type5']=='I'"  class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Notes</label>
+                                        <textarea [(ngModel)]="data?.formData['step_notes5']" class="form-control" id="step_notes5" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Left Code Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['left_title5']" class="form-control" id="left_title5" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Code</label>
+                                        <textarea [(ngModel)]="data?.formData['step_code5']" class="form-control" id="step_code5" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3"  style="text-align: right;">
+                                <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                                <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="data.formData['step_title5']!=''" class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Step 6</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Type</label>
+                                        <select  [(ngModel)]="data?.formData['step_type6']"  class="form-select" aria-label="Default select example">
+                                            <option selected>-- Select --</option>
+                                            <option value="C">Code</option>
+                                            <option value="I">Image</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['step_title6']" class="form-control" id="step_title6" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                        <textarea [(ngModel)]="data?.formData['step_dsc6']" class="form-control" id="step_dsc6" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="data?.formData['step_type6']=='I'"  class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Notes</label>
+                                        <textarea [(ngModel)]="data?.formData['step_notes6']" class="form-control" id="step_notes6" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Left Code Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['left_title6']" class="form-control" id="left_title6" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Code</label>
+                                        <textarea [(ngModel)]="data?.formData['step_code6']" class="form-control" id="step_code6" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3"  style="text-align: right;">
+                                <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                                <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="data.formData['step_title6']!=''" class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Step 7</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Type</label>
+                                        <select  [(ngModel)]="data?.formData['step_type7']"  class="form-select" aria-label="Default select example">
+                                            <option selected>-- Select --</option>
+                                            <option value="C">Code</option>
+                                            <option value="I">Image</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['step_title7']" class="form-control" id="step_title7" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                        <textarea [(ngModel)]="data?.formData['step_dsc7']" class="form-control" id="step_dsc7" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="data?.formData['step_type7']=='I'"  class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Notes</label>
+                                        <textarea [(ngModel)]="data?.formData['step_notes7']" class="form-control" id="step_notes7" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Left Code Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['left_title7']" class="form-control" id="left_title7" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Code</label>
+                                        <textarea [(ngModel)]="data?.formData['step_code7']" class="form-control" id="step_code7" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3"  style="text-align: right;">
+                                <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                                <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="data.formData['step_title7']!=''" class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Step 8</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Type</label>
+                                        <select  [(ngModel)]="data?.formData['step_type8']"  class="form-select" aria-label="Default select example">
+                                            <option selected>-- Select --</option>
+                                            <option value="C">Code</option>
+                                            <option value="I">Image</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['step_title8']" class="form-control" id="step_title8" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                        <textarea [(ngModel)]="data?.formData['step_dsc8']" class="form-control" id="step_dsc8" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="data?.formData['step_type3']=='I'"  class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Notes</label>
+                                        <textarea [(ngModel)]="data?.formData['step_notes8']" class="form-control" id="step_notes8" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="url"  class="form-label">Left Code Title</label>
+                                        <input type="text" [(ngModel)]="data?.formData['left_title8']" class="form-control" id="left_title8" aria-describedby="url">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Code</label>
+                                        <textarea [(ngModel)]="data?.formData['step_code8']" class="form-control" id="step_code8" rows="8"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3"  style="text-align: right;">
+                                <button (click)="closeIt()" class="btn btn-secondary m-2">Cancel</button>              
+                                <button (click)="postForm()" type="submit" class="btn btn-primary m-2">Submit</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <span style="font-size:8px">/app/forms/add-howto-form</span>

@@ -1,0 +1,72 @@
+<div class="card">
+    <div class="card-header">
+        Push to Host
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Push Models
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Push Datasets
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Push Documents
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Push Code/Libraries
+                            </label>
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="project_type" class="form-label">Project</label>
+                        <select  [(ngModel)]="data?.formData['project_type']"  class="form-select" aria-label="Default select example">
+                            <option selected>-- Select --</option>
+                            <option value="Model Training">Model Training</option>
+                            <option value="Fine-Tuning">Model Fine-Tuning</option>
+                            <option value="Inference Testing">Inference Testing</option>
+                            <option value="Inference">Production Inference</option>
+                          </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="project_type" class="form-label">Destination</label>
+                        <select [(ngModel)]="data?.formData['storage_limit']" class="form-select" aria-label="Default select example">
+                            <option selected>-- Select --</option>
+                            <option value="home">/home/user</option>
+                            <option value="www">/var/www/html</option>
+                          </select>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Overwrite
+                            </label>
+                          </div>
+                    </div>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Push Description</label>
+                    <textarea [(ngModel)]="data?.formData['project_dsc']" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+                  </div>
+                  <div class="mb-3"  style="text-align: right;">        
+                    <button (click)="postForm()" type="submit" class="btn btn-success m-2">Push</button>
+                  </div>
+            </div>
+            </div>
+    </div>
+    </div>
